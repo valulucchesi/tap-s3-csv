@@ -64,7 +64,7 @@ The `table` field consists of one or more objects, JSON encoded as an array and 
 - **table_name**: This value is a string of your choosing, and will be used to name the stream that records are emitted under for files matching content.
 - **key_properties**: These are the "primary keys" of the CSV files, to be used by the target for deduplication and primary key definitions downstream in the destination.
 - **date_overrides**: Specifies field names in the files that are supposed to be parsed as a datetime. The tap doesn't attempt to automatically determine if a field is a datetime, so this will make it explicit in the discovered schema.
-- **delimiter**: This allows you to specify a custom delimiter, such as `\t` or `|`, if that applies to your files.
+- ****: This allows you to specify a custom delimiter, such as `\t` or `|`, if that applies to your files.
 
 A sample configuration is available inside [config.sample.json](config.sample.json)
 

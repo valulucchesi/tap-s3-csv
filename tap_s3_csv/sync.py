@@ -30,7 +30,7 @@ def sync_stream(config, state, table_spec, stream):
     # based on anything else then we could just sync files as we see them.
     for s3_file in sorted(s3_files, key=lambda item: item['last_modified']):
         records_streamed += sync_table_file(
-            config, s3_file['key'], table_spec, stream)
+            config, s3_file['key'], table_spec, stream, s3_file['last_modified'])
 
         state = singer.write_bookmark(state, table_name, 'modified_since', s3_file['last_modified'].isoformat())
         singer.write_state(state)
@@ -39,7 +39,7 @@ def sync_stream(config, state, table_spec, stream):
 
     return records_streamed
 
-def sync_table_file(config, s3_path, table_spec, stream):
+def sync_table_file(config, s3_path, table_spec, stream, modified):
     LOGGER.info('Syncing file "%s".', s3_path)
 
     bucket = config['bucket']
@@ -72,6 +72,7 @@ def sync_table_file(config, s3_path, table_spec, stream):
         with Transformer() as transformer:
             to_write = transformer.transform(rec, stream['schema'], metadata.to_map(stream['metadata']))
 
+        to_write['last_modified'] = modified.__str__()
         singer.write_record(table_name, to_write)
         records_synced += 1
 
