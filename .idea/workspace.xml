@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="116726ae-87e5-4e88-8579-49543d806425" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tap_s3_csv/s3.py" beforeDir="false" afterPath="$PROJECT_DIR$/tap_s3_csv/s3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap_s3_csv/sync.py" beforeDir="false" afterPath="$PROJECT_DIR$/tap_s3_csv/sync.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,8 +48,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tap_s3_csv/s3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-177">
-              <caret line="20" column="49" lean-forward="true" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+            <state relative-caret-position="345">
+              <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -276,6 +277,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="952" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26190478" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -310,22 +312,22 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tap_s3_csv/s3.py</url>
-          <line>129</line>
+          <line>128</line>
           <option name="timeStamp" value="82" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tap_s3_csv/s3.py</url>
-          <line>161</line>
+          <line>160</line>
           <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tap_s3_csv/s3.py</url>
-          <line>156</line>
+          <line>155</line>
           <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tap_s3_csv/s3.py</url>
-          <line>169</line>
+          <line>168</line>
           <option name="timeStamp" value="87" />
         </line-breakpoint>
       </breakpoints>
@@ -620,8 +622,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tap_s3_csv/s3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-177">
-          <caret line="20" column="49" lean-forward="true" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+        <state relative-caret-position="345">
+          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

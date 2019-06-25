@@ -22,7 +22,6 @@ from singer_encodings.csv import SDC_EXTRA_COLUMN
 
 from tap_s3_csv import conversion
 import csv
-import pandas
 
 LOGGER = singer.get_logger()
 
