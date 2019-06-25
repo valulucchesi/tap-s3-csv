@@ -1,5 +1,7 @@
+import io
 import sys
 import csv
+import zipfile
 
 from singer import metadata
 from singer import Transformer
@@ -54,12 +56,34 @@ def sync_table_file(config, s3_path, table_spec, stream, modified):
     # need to be fixed. The other consequence of this could be larger
     # memory consumption but that's acceptable as well.
     csv.field_size_limit(sys.maxsize)
-    iterator = singer_encodings_csv.get_row_iterator(
-        s3_file_handle._raw_stream, table_spec) #pylint:disable=protected-access
+    longitud = 0
+    if s3_path.endswith('zip'):
+        with io.BytesIO(s3_file_handle.read()) as tf:
+                if tf is not None:
+                    tf.seek(0)
+
+                # Read the file as a zipfile and process the members
+                with zipfile.ZipFile(tf, mode='r') as zipf:
+                    for subfile in zipf.namelist():
+                        if "MAC" not in subfile:
+                            with zipf.open(subfile) as myfile:
+                                iterator = singer_encodings_csv.get_row_iterator(myfile, table_spec)
+                                rows = list(iterator)
+                                longitud = len(rows)
+
+    else:
+        iterator = singer_encodings_csv.get_row_iterator(
+            s3_file_handle._raw_stream, table_spec) #pylint:disable=protected-access
+        rows = list(iterator)
+        longitud = len(rows)
+
+
 
     records_synced = 0
+    current_row = 0
+    i=0
+    for row in rows:
 
-    for row in iterator:
         custom_columns = {
             s3.SDC_SOURCE_BUCKET_COLUMN: bucket,
             s3.SDC_SOURCE_FILE_COLUMN: s3_path,
@@ -75,5 +99,9 @@ def sync_table_file(config, s3_path, table_spec, stream, modified):
         to_write['last_modified'] = modified.__str__()
         singer.write_record(table_name, to_write)
         records_synced += 1
+        current_row += 1
+        print(current_row)
+        if (i == longitud):
+            continue
 
     return records_synced

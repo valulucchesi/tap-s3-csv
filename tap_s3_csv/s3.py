@@ -1,8 +1,13 @@
 import itertools
 import re
+from _csv import reader
+
 import backoff
 import boto3
 import singer
+import zipfile
+import io
+import codecs
 
 from botocore.credentials import (
     AssumeRoleCredentialFetcher,
@@ -12,8 +17,12 @@ from botocore.credentials import (
 )
 from botocore.exceptions import ClientError
 from botocore.session import Session
-from singer_encodings import csv
+from singer_encodings import csv as csv_singer
+from singer_encodings.csv import SDC_EXTRA_COLUMN
+
 from tap_s3_csv import conversion
+import csv
+import pandas
 
 LOGGER = singer.get_logger()
 
@@ -79,6 +88,7 @@ def get_sampled_schema_for_table(config, table_spec):
 
     s3_files_gen = get_input_files_for_table(config, table_spec)
 
+
     samples = [sample for sample in sample_files(config, table_spec, s3_files_gen)]
 
     if not samples:
@@ -88,7 +98,7 @@ def get_sampled_schema_for_table(config, table_spec):
         SDC_SOURCE_BUCKET_COLUMN: {'type': 'string'},
         SDC_SOURCE_FILE_COLUMN: {'type': 'string'},
         SDC_SOURCE_LINENO_COLUMN: {'type': 'integer'},
-        csv.SDC_EXTRA_COLUMN: {'type': 'array', 'items': {'type': 'string'}},
+        csv_singer.SDC_EXTRA_COLUMN: {'type': 'array', 'items': {'type': 'string'}},
     }
 
     data_schema = conversion.generate_schema(samples, table_spec)
@@ -113,24 +123,69 @@ def merge_dicts(first, second):
 
     return to_return
 
+def get_row_iterator_zip(iterable, options=None):
+    #reader = iterable._get_values[0]
+    #headers = set(reader)
+    options = options or {}
+    file_stream = codecs.iterdecode(iterable, encoding='utf-8')
+
+    field_names = None
+
+    # Replace any NULL bytes in the line given to the DictReader
+    reader = csv.DictReader((line.replace('\0', '') for line in file_stream),  delimiter=options.get('delimiter', ','))
+    headers = set(reader.fieldnames)
+    if options.get('key_properties'):
+        key_properties = set(options['key_properties'])
+        if not key_properties.issubset(headers):
+            raise Exception('CSV file missing required headers: {}, file only contains headers for fields: {}'
+                            .format(key_properties - headers, headers))
+
+    if options.get('date_overrides'):
+        date_overrides = set(options['date_overrides'])
+        if not date_overrides.issubset(headers):
+            raise Exception('CSV file missing date_overrides headers: {}, file only contains headers for fields: {}'
+                            .format(date_overrides - headers, headers))
+
+    return reader
+
+
+
 
 def sample_file(config, table_spec, s3_path, sample_rate):
     file_handle = get_file_handle(config, s3_path)
-    iterator = csv.get_row_iterator(file_handle._raw_stream, table_spec) #pylint:disable=protected-access
+    if s3_path.endswith('zip'):
+            with io.BytesIO(file_handle.read()) as tf:
+                if tf is not None:
+                    tf.seek(0)
+
+                # Read the file as a zipfile and process the members
+                with zipfile.ZipFile(tf, mode='r') as zipf:
+                    for subfile in zipf.namelist():
+                        if "MAC" not in subfile:
+                            with zipf.open(subfile) as myfile:
+                                iterator = csv_singer.get_row_iterator(myfile, table_spec)
+                                rows = list(iterator)
+                                longitud = len(rows)
+    else:
+        iterator = csv_singer.get_row_iterator(file_handle._raw_stream, table_spec) #pylint:disable=protected-access
+        rows = list(iterator)
+        longitud = len(rows)
 
     current_row = 0
 
     sampled_row_count = 0
-
-    for row in iterator:
+    i=0
+    for row in rows:
         if (current_row % sample_rate) == 0:
-            if row.get(csv.SDC_EXTRA_COLUMN):
-                row.pop(csv.SDC_EXTRA_COLUMN)
+            if row.get(csv_singer.SDC_EXTRA_COLUMN):
+                row.pop(csv_singer.SDC_EXTRA_COLUMN)
             sampled_row_count += 1
             if (sampled_row_count % 200) == 0:
                 LOGGER.info("Sampled %s rows from %s",
                             sampled_row_count, s3_path)
             yield row
+        if i == longitud:
+            continue
 
         current_row += 1
 
@@ -241,5 +296,6 @@ def get_file_handle(config, s3_path):
     s3_client = boto3.resource('s3')
 
     s3_bucket = s3_client.Bucket(bucket)
+
     s3_object = s3_bucket.Object(s3_path)
     return s3_object.get()['Body']
