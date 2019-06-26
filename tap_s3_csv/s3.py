@@ -28,6 +28,7 @@ LOGGER = singer.get_logger()
 SDC_SOURCE_BUCKET_COLUMN = "_sdc_source_bucket"
 SDC_SOURCE_FILE_COLUMN = "_sdc_source_file"
 SDC_SOURCE_LINENO_COLUMN = "_sdc_source_lineno"
+LAST_MODIFIED = "last_modified"
 
 
 def retry_pattern():
@@ -98,6 +99,7 @@ def get_sampled_schema_for_table(config, table_spec):
         SDC_SOURCE_FILE_COLUMN: {'type': 'string'},
         SDC_SOURCE_LINENO_COLUMN: {'type': 'integer'},
         csv_singer.SDC_EXTRA_COLUMN: {'type': 'array', 'items': {'type': 'string'}},
+        LAST_MODIFIED: {'type': 'string', 'format': 'date-time'}
     }
 
     data_schema = conversion.generate_schema(samples, table_spec)
