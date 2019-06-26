@@ -100,7 +100,6 @@ def sync_table_file(config, s3_path, table_spec, stream, modified):
         singer.write_record(table_name, to_write)
         records_synced += 1
         current_row += 1
-        print(current_row)
         if (i == longitud):
             continue
 
