@@ -1,12 +1,21 @@
 from singer import metadata
 from tap_s3_csv import s3
+import json
 
 def discover_streams(config):
     streams = []
 
     for table_spec in config['tables']:
         schema = discover_schema(config, table_spec)
+        if "preprocess" in config:
+            preprocess = json.loads(config['preprocess'])
+            if (table_spec['table_name'] == preprocess['table_name']):
+                for value in preprocess['values']:
+                    to_del = value.split("|")[1]
+                    if to_del in schema['properties']:
+                        del schema['properties'][to_del]
         streams.append({'stream': table_spec['table_name'], 'tap_stream_id': table_spec['table_name'], 'schema': schema, 'metadata': load_metadata(table_spec, schema)})
+
     return streams
 
 def discover_schema(config, table_spec):

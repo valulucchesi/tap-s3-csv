@@ -8,6 +8,7 @@ import singer
 import zipfile
 import io
 import codecs
+import json
 
 from botocore.credentials import (
     AssumeRoleCredentialFetcher,
@@ -135,6 +136,7 @@ def get_row_iterator_zip(iterable, options=None):
     # Replace any NULL bytes in the line given to the DictReader
     reader = csv.DictReader((line.replace('\0', '') for line in file_stream),  delimiter=options.get('delimiter', ','))
     headers = set(reader.fieldnames)
+
     if options.get('key_properties'):
         key_properties = set(options['key_properties'])
         if not key_properties.issubset(headers):
@@ -175,7 +177,9 @@ def sample_file(config, table_spec, s3_path, sample_rate):
     current_row = 0
 
     sampled_row_count = 0
+
     i=0
+
     for row in rows:
         if (current_row % sample_rate) == 0:
             if row.get(csv_singer.SDC_EXTRA_COLUMN):
@@ -197,7 +201,7 @@ def sample_file(config, table_spec, s3_path, sample_rate):
 
 # pylint: disable=too-many-arguments
 def sample_files(config, table_spec, s3_files,
-                 sample_rate=5, max_records=1000, max_files=5):
+                 sample_rate=1, max_records=1000, max_files=1):
     LOGGER.info("Sampling files (max files: %s)", max_files)
     for s3_file in itertools.islice(s3_files, max_files):
         LOGGER.info('Sampling %s (max records: %s, sample rate: %s)',

@@ -10,6 +10,7 @@ from singer import utils
 import singer
 from singer_encodings import csv as singer_encodings_csv
 from tap_s3_csv import s3
+import json
 
 LOGGER = singer.get_logger()
 
@@ -46,6 +47,7 @@ def sync_table_file(config, s3_path, table_spec, stream, modified):
 
     bucket = config['bucket']
     table_name = table_spec['table_name']
+    preprocess_table = json.loads(config['preprocess'])
 
     s3_file_handle = s3.get_file_handle(config, s3_path)
     # We observed data who's field size exceeded the default maximum of
@@ -65,7 +67,6 @@ def sync_table_file(config, s3_path, table_spec, stream, modified):
                 # Read the file as a zipfile and process the members
                 with zipfile.ZipFile(tf, mode='r') as zipf:
                     for subfile in zipf.namelist():
-                        if "MAC" not in subfile:
                             with zipf.open(subfile) as myfile:
                                 iterator = singer_encodings_csv.get_row_iterator(myfile, table_spec)
                                 rows = list(iterator)
@@ -96,6 +97,19 @@ def sync_table_file(config, s3_path, table_spec, stream, modified):
         with Transformer() as transformer:
             to_write = transformer.transform(rec, stream['schema'], metadata.to_map(stream['metadata']))
 
+            if(table_name == preprocess_table['table_name']):
+                for value in preprocess_table['values']:
+                    to_get = value.split("|")[0]
+                    to_del = value.split("|")[1]
+                    if to_get in to_write:
+                        if to_del in to_write:
+                            if to_write[to_get] == to_write[to_del]:
+                                del to_write[to_del]
+                            else:
+                                LOGGER.info('not the same')
+                    if to_del in to_write:
+                        to_write[to_get] = to_write[to_del]
+                        del to_write[to_del]
         to_write['last_modified'] = modified.__str__()
         singer.write_record(table_name, to_write)
         records_synced += 1
