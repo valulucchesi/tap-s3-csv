@@ -7,7 +7,7 @@ def discover_streams(config):
 
     for table_spec in config['tables']:
         schema = discover_schema(config, table_spec)
-        if "preprocess" in config:
+        if "preprocess" in config and config['preprocess'] != '':
             preprocess_items = json.loads(config['preprocess'])
             for i in preprocess_items:
                 preprocess = i

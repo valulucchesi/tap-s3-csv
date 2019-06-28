@@ -47,7 +47,6 @@ def sync_table_file(config, s3_path, table_spec, stream, modified):
 
     bucket = config['bucket']
     table_name = table_spec['table_name']
-    preprocess_table = json.loads(config['preprocess'])
 
     s3_file_handle = s3.get_file_handle(config, s3_path)
     # We observed data who's field size exceeded the default maximum of
@@ -96,7 +95,7 @@ def sync_table_file(config, s3_path, table_spec, stream, modified):
 
         with Transformer() as transformer:
             to_write = transformer.transform(rec, stream['schema'], metadata.to_map(stream['metadata']))
-            if "preprocess" in config:
+            if "preprocess" in config and config['preprocess'] != '':
                 preprocess_items = json.loads(config['preprocess'])
                 for i in preprocess_items:
                     preprocess = i
