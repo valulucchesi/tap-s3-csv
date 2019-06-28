@@ -8,15 +8,17 @@ def discover_streams(config):
     for table_spec in config['tables']:
         schema = discover_schema(config, table_spec)
         if "preprocess" in config:
-            preprocess = json.loads(config['preprocess'])
-            if (table_spec['table_name'] == preprocess['table_name']):
-                for value in preprocess['values']:
-                    to_get = value.split("|")[0]
-                    to_del = value.split("|")[1]
-                    if to_del in schema['properties']:
-                        del schema['properties'][to_del]
-                    if to_get not in schema['properties']:
-                        schema['properties'][to_get] = {'type':['null', 'string']}
+            preprocess_items = json.loads(config['preprocess'])
+            for i in preprocess_items:
+                preprocess = i
+                if (table_spec['table_name'] == preprocess['table_name']):
+                    for value in preprocess['values']:
+                        to_get = value.split("|")[0]
+                        to_del = value.split("|")[1]
+                        if to_del in schema['properties']:
+                            del schema['properties'][to_del]
+                        if to_get not in schema['properties']:
+                            schema['properties'][to_get] = {'type':['null', 'string']}
         streams.append({'stream': table_spec['table_name'], 'tap_stream_id': table_spec['table_name'], 'schema': schema, 'metadata': load_metadata(table_spec, schema)})
 
     return streams

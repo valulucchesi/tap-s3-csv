@@ -201,7 +201,7 @@ def sample_file(config, table_spec, s3_path, sample_rate):
 
 # pylint: disable=too-many-arguments
 def sample_files(config, table_spec, s3_files,
-                 sample_rate=1, max_records=1000, max_files=1):
+                 sample_rate=2, max_records=1000, max_files=2):
     LOGGER.info("Sampling files (max files: %s)", max_files)
     for s3_file in itertools.islice(s3_files, max_files):
         LOGGER.info('Sampling %s (max records: %s, sample rate: %s)',

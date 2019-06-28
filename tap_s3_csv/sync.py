@@ -96,20 +96,21 @@ def sync_table_file(config, s3_path, table_spec, stream, modified):
 
         with Transformer() as transformer:
             to_write = transformer.transform(rec, stream['schema'], metadata.to_map(stream['metadata']))
-
-            if(table_name == preprocess_table['table_name']):
-                for value in preprocess_table['values']:
-                    to_get = value.split("|")[0]
-                    to_del = value.split("|")[1]
-                    if to_get in to_write:
+            if "preprocess" in config:
+                preprocess = json.loads(config['preprocess'])
+                if(table_name == preprocess_table['table_name']):
+                    for value in preprocess_table['values']:
+                        to_get = value.split("|")[0]
+                        to_del = value.split("|")[1]
+                        if to_get in to_write:
+                            if to_del in to_write:
+                                if to_write[to_get] == to_write[to_del]:
+                                    del to_write[to_del]
+                                else:
+                                    LOGGER.info('not the same')
                         if to_del in to_write:
-                            if to_write[to_get] == to_write[to_del]:
-                                del to_write[to_del]
-                            else:
-                                LOGGER.info('not the same')
-                    if to_del in to_write:
-                        to_write[to_get] = to_write[to_del]
-                        del to_write[to_del]
+                            to_write[to_get] = to_write[to_del]
+                            del to_write[to_del]
         to_write['last_modified'] = modified.__str__()
         singer.write_record(table_name, to_write)
         records_synced += 1
