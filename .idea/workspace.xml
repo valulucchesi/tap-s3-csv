@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="116726ae-87e5-4e88-8579-49543d806425" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/tap_s3_csv/discover.py" beforeDir="false" afterPath="$PROJECT_DIR$/tap_s3_csv/discover.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tap_s3_csv/sync.py" beforeDir="false" afterPath="$PROJECT_DIR$/tap_s3_csv/sync.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,8 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tap_s3_csv/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="85" selection-start-line="85" selection-end-line="85" />
+            <state relative-caret-position="178">
+              <caret line="35" column="83" lean-forward="true" selection-start-line="35" selection-start-column="83" selection-end-line="35" selection-end-column="83" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -37,7 +36,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tap_s3_csv/discover.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
@@ -79,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tap_s3_csv/sync.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="97" column="69" lean-forward="true" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="69" />
+            <state relative-caret-position="157">
+              <caret line="111" column="147" selection-start-line="111" selection-start-column="147" selection-end-line="111" selection-end-column="147" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -94,8 +93,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file:///usr/local/lib/python3.7/site-packages/singer/messages.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="211" selection-start-line="211" selection-end-line="211" />
+            <state relative-caret-position="154">
+              <caret line="31" column="64" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -104,7 +103,7 @@
         <entry file="file:///usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1014">
-              <caret line="1024" lean-forward="true" selection-start-line="1024" selection-end-line="1024" />
+              <caret line="1024" selection-start-line="1024" selection-end-line="1024" />
             </state>
           </provider>
         </entry>
@@ -150,8 +149,8 @@
       <find>user:name</find>
       <find>user:service</find>
       <find>rate</find>
-      <find>get_sampled_schema_for_table</find>
       <find>logger.war</find>
+      <find>get_sampled_schema_for_table</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -167,16 +166,16 @@
         <option value="/usr/local/lib/python3.7/site-packages/singer_encodings/csv.py" />
         <option value="/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/zipfile.py" />
         <option value="$PROJECT_DIR$/tap_s3_csv/s3.py" />
-        <option value="$PROJECT_DIR$/tap_s3_csv/sync.py" />
         <option value="$PROJECT_DIR$/tap_s3_csv/discover.py" />
+        <option value="$PROJECT_DIR$/tap_s3_csv/__init__.py" />
+        <option value="$PROJECT_DIR$/tap_s3_csv/sync.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="34" />
-    <option name="y" value="25" />
-    <option name="width" value="1620" />
-    <option name="height" value="941" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="951" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -280,7 +279,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="951" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="951" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26190478" />
@@ -292,13 +291,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.72649574" weight="0.38998836" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.7905983" visible="true" weight="0.5355064" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.72527474" weight="0.38998836" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.7893773" visible="true" weight="0.51804423" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49936628" weight="0.32906976" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49873257" weight="0.32906976" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.20940171" side_tool="true" visible="true" weight="0.5355064" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.21062271" side_tool="true" visible="true" weight="0.51804423" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32906976" />
       <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -329,11 +328,6 @@
           <line>10</line>
           <option name="timeStamp" value="140" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tap_s3_csv/sync.py</url>
-          <line>97</line>
-          <option name="timeStamp" value="141" />
-        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -359,6 +353,36 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>LOGGER.warning('removing record: ' + json.dumps(rec) + ' ' + 'hola' + 'and ' + 'hola' + ' are not equals')</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>LOGGER.warning('removing record: ' + json.dumps(rec) + ' ' + hola + 'and ' + hola + ' are not equals')</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>LOGGER.warning('removing record: ' + json.dumps(rec) + ' ' + to_get + 'and ' + to_del + ' are not equals')</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>LOGGER.warning('removing record: ' + rec.toString() + ' ' + to_get + 'and ' + to_del + ' are not equals')</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>LOGGER.warning('removing record: ' + rec + ' ' + to_get + 'and ' + to_del + ' are not equals')</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>&quot;preprocess&quot; in config and config['preprocess'] != ''</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>json.loads(config['preprocess'])</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -370,36 +394,6 @@
       </expression>
       <expression>
         <expression-string>schema['properties']['InvoiceID'] = {'type':['null', 'string']}</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>schema['properties']['InvoiceID'] = '{'type':['null', 'string']}'</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>schema['properties']['InvoiceID']</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>schema['properties']</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>schema['properties']['invoiceId']</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>schema['properties']['invoiceID']</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>value</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -589,10 +583,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1014">
+          <caret line="1024" selection-start-line="1024" selection-end-line="1024" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.7/site-packages/singer/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="545">
+          <caret line="194" selection-start-line="194" selection-end-line="194" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file:///usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="334" selection-start-line="334" selection-end-line="334" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/IdeaIC2019.1/python_stubs/-1199943126/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="3622" column="8" selection-start-line="3622" selection-start-column="8" selection-end-line="3622" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tap_s3_csv/discover.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="65" selection-start-line="9" selection-start-column="65" selection-end-line="9" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tap_s3_csv/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="35" column="83" lean-forward="true" selection-start-line="35" selection-start-column="83" selection-end-line="35" selection-end-column="83" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -606,60 +641,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/IdeaIC2019.1/python_stubs/-1199943126/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="3622" column="8" selection-start-line="3622" selection-start-column="8" selection-end-line="3622" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.7/site-packages/singer/messages.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="211" selection-start-line="211" selection-end-line="211" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1014">
-          <caret line="1024" lean-forward="true" selection-start-line="1024" selection-end-line="1024" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tap_s3_csv/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="85" selection-start-line="85" selection-end-line="85" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python3.7/site-packages/singer/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="194" selection-start-line="194" selection-end-line="194" />
+        <state relative-caret-position="154">
+          <caret line="31" column="64" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tap_s3_csv/sync.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="97" column="69" lean-forward="true" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="69" />
+        <state relative-caret-position="157">
+          <caret line="111" column="147" selection-start-line="111" selection-start-column="147" selection-end-line="111" selection-end-column="147" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tap_s3_csv/discover.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="65" selection-start-line="9" selection-start-column="65" selection-end-line="9" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
           </folding>
         </state>
       </provider>

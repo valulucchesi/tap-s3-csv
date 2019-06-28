@@ -109,7 +109,8 @@ def sync_table_file(config, s3_path, table_spec, stream, modified):
                                         if to_del in to_write:
                                             del to_write[to_del]
                                     else:
-                                        LOGGER.warning('removing record: ' + rec + ' ' + to_get + 'and ' + to_del + ' are not equals')
+                                        LOGGER.warning('removing record: ' + json.dumps(rec) + ' ' + to_get + ' and ' + to_del + ' are not equals')
+
                             elif to_del in rec:
                                 to_write[to_get] = rec[to_del]
                                 if to_del in to_write:
