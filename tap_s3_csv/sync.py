@@ -100,19 +100,24 @@ def sync_table_file(config, s3_path, table_spec, stream, modified):
                 preprocess_items = json.loads(config['preprocess'])
                 for i in preprocess_items:
                     preprocess = i
-                    if(table_name == preprocess_table['table_name']):
-                        for value in preprocess_table['values']:
+                    if(table_name == preprocess['table_name']):
+                        for value in preprocess['values']:
                             to_get = value.split("|")[0]
                             to_del = value.split("|")[1]
-                            if to_get in to_write:
-                                if to_del in to_write:
-                                    if to_write[to_get] == to_write[to_del]:
-                                        del to_write[to_del]
+                            if to_get in rec:
+                                if to_del in rec:
+                                    if rec[to_get] == rec[to_del]:
+                                        if to_del in to_write:
+                                            del to_write[to_del]
                                     else:
-                                        LOGGER.info('not the same')
-                            if to_del in to_write:
-                                to_write[to_get] = to_write[to_del]
-                                del to_write[to_del]
+                                        LOGGER.warning('removing record: ' + rec + ' ' + to_get + 'and ' + to_del + ' are not equals')
+                            elif to_del in rec:
+                                to_write[to_get] = rec[to_del]
+                                if to_del in to_write:
+                                    del to_write[to_del]
+                            else:
+                                to_write[to_get] = ""
+
         to_write['last_modified'] = modified.__str__()
         singer.write_record(table_name, to_write)
         records_synced += 1
