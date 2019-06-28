@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="116726ae-87e5-4e88-8579-49543d806425" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/tap_s3_csv/discover.py" beforeDir="false" afterPath="$PROJECT_DIR$/tap_s3_csv/discover.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap_s3_csv/s3.py" beforeDir="false" afterPath="$PROJECT_DIR$/tap_s3_csv/s3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tap_s3_csv/sync.py" beforeDir="false" afterPath="$PROJECT_DIR$/tap_s3_csv/sync.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tap_s3_csv/discover.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="135">
+              <caret line="9" selection-start-line="9" selection-end-line="12" selection-end-column="30" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -92,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tap_s3_csv/sync.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1433">
-              <caret line="108" column="37" lean-forward="true" selection-start-line="108" selection-start-column="37" selection-end-line="108" selection-end-column="37" />
+            <state relative-caret-position="281">
+              <caret line="114" column="52" lean-forward="true" selection-start-line="114" selection-start-column="52" selection-end-line="114" selection-end-column="52" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -170,9 +168,9 @@
         <option value="/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/csv.py" />
         <option value="/usr/local/lib/python3.7/site-packages/singer_encodings/csv.py" />
         <option value="/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/zipfile.py" />
-        <option value="$PROJECT_DIR$/tap_s3_csv/sync.py" />
         <option value="$PROJECT_DIR$/tap_s3_csv/s3.py" />
         <option value="$PROJECT_DIR$/tap_s3_csv/discover.py" />
+        <option value="$PROJECT_DIR$/tap_s3_csv/sync.py" />
       </list>
     </option>
   </component>
@@ -285,6 +283,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="951" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26190478" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -296,12 +295,12 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.72649574" weight="0.38998836" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.7905983" visible="true" weight="0.87892896" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.7905983" visible="true" weight="0.45285216" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49936628" weight="0.32906976" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49873257" weight="0.32906976" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.20940171" side_tool="true" visible="true" weight="0.87892896" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.20940171" side_tool="true" visible="true" weight="0.45285216" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32906976" />
       <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -590,37 +589,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tap_s3_csv/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="334" selection-start-line="334" selection-end-line="334" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tap_s3_csv/sync.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1433">
-          <caret line="108" column="37" lean-forward="true" selection-start-line="108" selection-start-column="37" selection-end-line="108" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/IdeaIC2019.1/python_stubs/-1199943126/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="3622" column="8" selection-start-line="3622" selection-start-column="8" selection-end-line="3622" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -641,12 +613,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tap_s3_csv/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/IdeaIC2019.1/python_stubs/-1199943126/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="3622" column="8" selection-start-line="3622" selection-start-column="8" selection-end-line="3622" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tap_s3_csv/discover.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="12" selection-end-column="30" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tap_s3_csv/sync.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="114" column="52" lean-forward="true" selection-start-line="114" selection-start-column="52" selection-end-line="114" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
