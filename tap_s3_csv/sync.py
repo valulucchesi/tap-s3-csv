@@ -2,6 +2,7 @@ import io
 import sys
 import csv
 import zipfile
+from datetime import timedelta
 
 from singer import metadata
 from singer import Transformer
@@ -18,7 +19,7 @@ def sync_stream(config, state, table_spec, stream):
     table_name = table_spec['table_name']
     modified_since = utils.strptime_with_tz(singer.get_bookmark(state, table_name, 'modified_since') or
                                             config['start_date'])
-
+    modified_since += timedelta(days=1)
     LOGGER.info('Syncing table "%s".', table_name)
     LOGGER.info('Getting files modified since %s.', modified_since)
 
