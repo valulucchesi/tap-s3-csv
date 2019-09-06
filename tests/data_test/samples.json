@@ -1,0 +1,33 @@
+[
+  {
+    "InvoiceID":"233692469",
+    "PayerAccountId":"567116516789",
+    "LinkedAccountId":"",
+    "RecordType":"PayerLineItem",
+    "RecordID":"2400000001535860314",
+    "BillingPeriodStartDate":"2019/05/01 00:00:00",
+    "BillingPeriodEndDate":"2019/05/31 23:59:59",
+    "InvoiceDate":"2019/06/03 12:17:29",
+    "PayerAccountName":"Patricio Echague",
+    "LinkedAccountName":"",
+    "TaxationAddress":"",
+    "PayerPONumber":"",
+    "ProductCode":"AmazonElastiCache",
+    "ProductName":"Amazon ElastiCache",
+    "SellerOfRecord":"Amazon Web Services, Inc.",
+    "UsageType":"NodeUsage:cache.t2.small",
+    "Operation":"CreateCacheCluster:0002",
+    "RateId":"411655883",
+    "ItemDescription":"$0.034 per T2 Small Cache node-hour (or partial hour) running Redis",
+    "UsageStartDate":"2019/05/01 00:00:00",
+    "UsageEndDate":"2019/05/21 18:04:52",
+    "UsageQuantity":"958.0",
+    "BlendedRate":"",
+    "CurrencyCode":"USD",
+    "CostBeforeTax":"32.57",
+    "Credits":"0.0",
+    "TaxAmount":"0.000000",
+    "TaxType":"None",
+    "TotalCost":"32.570000"
+  }
+]

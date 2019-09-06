@@ -1,0 +1,8 @@
+{
+  "search_prefix":"",
+  "search_pattern":"^(.*?)aws-billing-detailed-line-items-with-resources-and-tags-(?!2019-06)(.*?)",
+  "table_name":"billing_resource_tags",
+  "key_properties":["InvoiceID"],
+  "date_overrides":[],
+  "delimiter":","
+}

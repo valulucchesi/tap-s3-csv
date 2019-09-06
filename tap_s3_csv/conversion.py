@@ -1,5 +1,5 @@
 import singer
-
+import simplejson
 LOGGER = singer.get_logger()
 
 def infer(datum):

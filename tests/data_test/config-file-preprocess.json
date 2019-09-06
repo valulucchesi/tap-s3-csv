@@ -1,0 +1,9 @@
+{
+  "start_date":"2017-11-02T00:00:00Z",
+  "account_id":"id",
+  "role_name":"role",
+  "bucket":"bucket",
+  "external_id":"external",
+  "tables":"[{\"search_prefix\":\"\",\"search_pattern\":\"^(.*?)aws-billing-csv-(2019-05)(.*?).csv$\",\"table_name\":\"billing\",\"key_properties\":\"\",\"date_overrides\":\"\",\"delimiter\":\",\"}]",
+  "preprocess":"[{\"table_name\":\"billing\",\"values\":[\"tag|tag_selected\"]}]"
+}

@@ -1,0 +1,7 @@
+{
+  "search_pattern": "^(.*?)aws-billing-csv-(2019-05)(.*?).csv$",
+  "table_name": "billing",
+  "key_properties": [],
+  "date_overrides": [],
+  "delimiter": ","
+}

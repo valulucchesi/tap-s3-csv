@@ -1,0 +1,9 @@
+[
+  "tests/test_conversion.py::ConversionTestCase::test_count_sample",
+  "tests/test_conversion.py::ConversionTestCase::test_generate_schema",
+  "tests/test_conversion.py::ConversionTestCase::test_infer",
+  "tests/test_conversion.py::ConversionTestCase::test_pick_datatype",
+  "tests/test_discover.py::DiscoverTestCase::test_discover_streams",
+  "tests/test_discover.py::DiscoverTestCase::test_load_metadata",
+  "tests/test_s3.py::TestS3::test_sample_schema_for_table"
+]

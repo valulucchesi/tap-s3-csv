@@ -1,0 +1,1 @@
+{"_sdc_source_bucket": {"type": "string"}, "_sdc_source_file": {"type": "string"}, "_sdc_source_lineno": {"type": "integer"}, "_sdc_extra": {"type": "array", "items": {"type": "string"}}, "last_modified": {"type": "string", "format": "date-time"}}
